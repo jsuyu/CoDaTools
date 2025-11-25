@@ -41,7 +41,7 @@ function results = mrlr_scores(X)
     [n, D] = size(X);
 
     % Check that all values are positive
-    [is_comp, row_check] = CoDaTools.check.check_comp(X);
+    [is_comp, row_check] = check_comp(X);
     if ~is_comp
         invalid_rows = find(~row_check);
         error( ['✗ Some rows contain zeros or negative values\n' ...
@@ -74,4 +74,5 @@ function results = mrlr_scores(X)
             'scores', X_mrlr ...
         );
     end
+
 end
